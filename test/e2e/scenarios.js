@@ -81,5 +81,20 @@ describe('PhoneCat App', function() {
         expect(imgs.length).toBe(4);
       });
     });
+
+    it('should display the first phone img as the main image', function() {
+      var mainImage = element(by.css('img.phone'));
+      expect(mainImage.getAttribute('src')).toMatch(/img\/phones\/nexus-s.0.jpg/);
+    });
+
+    it('should swap main img if thumbnail is clicked', function() {
+      var mainImage = element(by.css('img.phone'));
+
+      element(by.css('.phone-thumbs li:nth-child(3) img')).click();
+      expect(mainImage.getAttribute('src')).toMatch(/img\/phones\/nexus-s.2.jpg/);
+
+      element(by.css('.phone-thumbs li:nth-child(1) img')).click();
+      expect(mainImage.getAttribute('src')).toMatch(/img\/phones\/nexus-s.0.jpg/);
+    });
   });
 });
