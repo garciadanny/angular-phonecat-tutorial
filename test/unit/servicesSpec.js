@@ -4,4 +4,9 @@
 
 describe('service', function() {
 
+  beforeEach(module('phonecatServices'));
+
+  it('check the existence of Phone factory', inject(function(Phone) {
+    expect(Phone).toBeDefined();
+  }));
 });
