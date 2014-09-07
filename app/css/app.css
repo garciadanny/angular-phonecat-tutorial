@@ -4,6 +4,8 @@ body {
   padding-top: 20px;
 }
 
+/* Phone List View */
+
 .phones {
     list-style: none;
 }
@@ -26,13 +28,17 @@ body {
 
 img.phone {
     float: left;
-    border: 1px solid black;
     margin-right: 3em;
     margin-bottom: 2em;
     background-color: white;
     padding: 2em;
     height: 400px;
     width: 400px;
+    display: none;
+}
+
+img.phone:first-child {
+    display: block;
 }
 
 ul.phone-thumbs {
@@ -81,4 +87,13 @@ ul.specs dt {
 
 h1 {
     border-bottom: 1px solid grey;
+}
+
+.phone-images {
+    background-color: white;
+    width: 450px;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    float: left;
 }
